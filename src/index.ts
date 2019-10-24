@@ -1,5 +1,1 @@
-import { Observable, of } from 'rxjs';
-
-export function testFunction(foo: any): Observable<any> {
-  return of(foo);
-}
+export * from './map-array-map';
