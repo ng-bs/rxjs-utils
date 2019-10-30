@@ -1,12 +1,13 @@
 {
   "name": "@ngbs/rxjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilities to assist with the usage of RxJS",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "deploy": "npm run build && npm run test && npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   },
   "homepage": "https://github.com/ng-bs/rxjs-utils#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.19",
+    "@types/jest": "^24.0.21",
     "jasmine-marbles": "^0.6.0",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
