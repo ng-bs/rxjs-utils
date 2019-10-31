@@ -36,3 +36,14 @@ of([1, 2, 3, 4])
   .subscribe(console.log);
 // 10
 ```
+
+### mapArrayReverse
+
+Reverses an array in an Observable.
+
+```js
+of([1, 2, 3, 4, 5])
+  .pipe(mapArrayReverse())
+  .subscribe(console.log);
+// [5, 4, 3, 2, 1]
+```
