@@ -2,8 +2,8 @@ import { of } from 'rxjs';
 import { mapArrayReduce, MapArrayReduceNotArrayError } from './map-array-reduce';
 import { cold } from 'jasmine-marbles';
 
-describe('mapArrayMap', () => {
-  it('should map the numeric items of the array', () => {
+describe('mapArrayReduce', () => {
+  it('should reduce the numeric items of the array', () => {
     const actual = of([1, 2, 3, 4, 5]).pipe(
       mapArrayReduce((sum, cur) => sum + cur, 0)
     );
@@ -11,7 +11,15 @@ describe('mapArrayMap', () => {
     expect(actual).toBeObservable(expected);
   });
 
-  it('should map the object items of the array', () => {
+  it('should reduce the items of the array, start to', () => {
+    const actual = of(['1', '2', '3', '4', '5']).pipe(
+      mapArrayReduce((sum, cur) => sum + cur, '')
+    );
+    const expected = cold('(a|)', { a: '12345' });
+    expect(actual).toBeObservable(expected);
+  });
+
+  it('should reduce the object items of the array', () => {
     const actual = of([
       { firstName: 'John', lastName: 'Doe' },
       { firstName: 'Jane', lastName: 'Doe' }
