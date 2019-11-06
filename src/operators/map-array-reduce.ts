@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
  * - - - -     6     - - -    7   - - - -
  *
  * @param fn Predicate function to apply to each item in the array.
+ * @param init The initial starting value.
  */
 export function mapArrayReduce<T, R>(fn: (acc: R, curr: T) => R, init: R) {
   return map((arr: T[]) => {
