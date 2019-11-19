@@ -58,3 +58,22 @@ of([1, 2, 3, 4, 5])
   .subscribe(console.log);
 // [5, 4, 3, 2, 1]
 ```
+
+
+### mapArraySort
+
+Sorts an array in an Observable.
+
+```js
+of([3, 1, 5, 2, 4])
+  .pipe(mapArraySort())
+  .subscribe(console.log);
+// [1, 2, 3, 4, 5]
+```
+
+```js
+of([3, 1, 5, 2, 4])
+  .pipe(mapArraySort((a, b) => a > b ? -1 : 1))
+  .subscribe(console.log);
+// [5, 4, 3, 2, 1]
+```
