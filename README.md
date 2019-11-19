@@ -37,6 +37,17 @@ of([1, 2, 3, 4])
 // 10
 ```
 
+### mapArrayReduceRight
+
+Reduce an array in an Observable, right to left.
+
+```js
+of(['a', 'b', 'c', 'd'])
+  .pipe(mapArrayReduceRight((acc, cur) => acc + cur, ''))
+  .subscribe(console.log);
+// 'dcba'
+```
+
 ### mapArrayReverse
 
 Reverses an array in an Observable.
